@@ -1,59 +1,94 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Flor</title>
-  <style>
-    .flower {
-      position: relative;
-    }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="style.css">
+    <title>Flower</title>
+    <style>
+        .flower {
+            position: relative;
+        }
 
-    #message-container {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      display: none;
-    }
+        .Petal {
+            cursor: pointer;
+        }
 
-    .Petal:hover::before {
-      content: "Cute";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.8);
-      padding: 10px;
-      border-radius: 5px;
-      z-index: 1; /* Asegura que esté por encima de los pétalos */
-    }
-  </style>
+        #message-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .Petal:hover::before {
+            content: "Cute";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+    </style>
 </head>
-<body>
-  <div class="flower">
-    <div class="text-above">Feliz día de la mujer</div>
-    <div class="mid"></div>
-    <div class="Petal1 p1"></div>
-    <div class="Pétalo1 p2"></div>
-    <div class="Pétalo1 p3"></div>
-    <div class="Pétalo1 p4"></div>
-    <div class="Pétalo2 p1"></div>
-    <div class="Pétalo2 p2"></div>
-    <div class="Pétalo2 p3"></div>
-    <div class="Pétalo2 p4"></div>
-    <div class="Pétalo3 p1"></div>
-    <div class="Pétalo3 p2"></div>
-    <div class="Pétalo3 p3"></div>
-    <div class="Pétalo3 p4"></div>
-    <div class="text-below">¡Pásala bien! :)</div>
-  </div>
 
-  <div id="message-container"></div>
+<body>
+
+    <div class="flower">
+        <div class="text-above">Feliz día de la mujer</div>
+        <div class="mid">
+        </div>
+        <div class="Petal Petal1 p1" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal1 p2" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal1 p3" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal1 p4" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal2 p1" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal2 p2" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal2 p3" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal2 p4" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal3 p1" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal3 p2" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal3 p3" onclick="replaceText(this)">
+        </div>
+        <div class="Petal Petal3 p4" onclick="replaceText(this)">
+        </div>
+        <div class="text-below">Pasala bien :) </div>
+    </div>
+
+    <div id="message-container"></div>
+
+    <script>
+        function replaceText(element) {
+            var messageContainer = document.getElementById("message-container");
+            messageContainer.innerHTML = "Cute";
+            messageContainer.style.display = "block";
+
+            setTimeout(function () {
+                messageContainer.style.display = "none";
+                messageContainer.innerHTML = "";
+            }, 3000);
+        }
+    </script>
 </body>
+
 </html>
+
