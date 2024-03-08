@@ -6,6 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Flor</title>
+  <style>
+    #message-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <div class="flower">
@@ -26,9 +38,18 @@
     <div class="text-below">¡Pásala bien! :)</div>
   </div>
 
+  <div id="message-container"></div>
+
   <script>
     function showMessage(message) {
-      alert(message);
+      var messageContainer = document.getElementById("message-container");
+      messageContainer.innerHTML = message;
+      messageContainer.style.display = "block";
+
+      // Oculta el mensaje después de 2 segundos (puedes ajustar este valor)
+      setTimeout(function() {
+        messageContainer.style.display = "none";
+      }, 2000);
     }
   </script>
 </body>
